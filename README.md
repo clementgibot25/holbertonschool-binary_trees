@@ -39,15 +39,8 @@ This rule applies recursively to every node in the tree.
 
 This structure makes searching, inserting, and deleting elements efficient — ideally O(log n) time for balanced trees.
 
-#### ⚖️ Differences: Binary Tree vs Binary Search Tree
+#### 🔧 Basic Binary Tree Operations in C
 
-Feature	Binary Tree	Binary Search Tree (BST)
-Structure	Each node has at most two children	Each node has at most two children
-Value Ordering	No specific order	Left < Node < Right
-Searching Time	O(n) (linear search)	O(log n) average (if balanced)
-Purpose	General hierarchical data	Efficient searching and sorting
-Examples	Expression trees, file systems	Maps, dictionaries, indexes
-🔧 Basic Binary Tree Operations in C
 Create Node – Allocate and initialize a new node
 
 Insert Left/Right – Attach a node to a parent
