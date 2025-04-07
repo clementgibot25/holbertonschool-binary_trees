@@ -1,12 +1,23 @@
-🌳 Binary Trees in C
-This project focuses on implementing and working with Binary Trees using the C programming language. Binary Trees are foundational structures in computer science and are widely used for organizing hierarchical data, efficient searching, sorting, and more.
+# 🌳 Binary Trees in C
 
-What is a Binary Tree?
-A Binary Tree is a data structure where each node has at most two children: a left child and a right child.
+This project focuses on implementing and working with **Binary Trees** using the C programming language. Binary Trees are a fundamental data structure in computer science and appear in many practical applications, such as parsing expressions, organizing hierarchical data, and building search structures.
 
-Structure of a Binary Tree Node in C:
+---
 
-typedef struct binary_tree_s { int n; struct binary_tree_s *left; struct binary_tree_s *right; } binary_tree_t;
+## 📘 What is a Binary Tree?
+
+A **Binary Tree** is a hierarchical data structure in which each node has **at most two children**, referred to as the left and right child.
+
+### Structure in C
+
+```c
+typedef struct binary_tree_s
+{
+    int n;
+    struct binary_tree_s *left;
+    struct binary_tree_s *right;
+} binary_tree_t;
+```
 
 Each node contains:
 
@@ -16,53 +27,69 @@ A pointer to the left child
 
 A pointer to the right child
 
-Binary Tree vs Binary Search Tree (BST)
+🧭 What is a Binary Search Tree (BST)?
+A Binary Search Tree (BST) is a special type of binary tree where:
+
+All nodes in the left subtree contain values less than the parent node.
+
+All nodes in the right subtree contain values greater than the parent node.
+
+This rule applies recursively to every node in the tree.
+
+This structure makes searching, inserting, and deleting elements efficient — ideally O(log n) time for balanced trees.
+
+⚖️ Differences: Binary Tree vs Binary Search Tree
 Feature	Binary Tree	Binary Search Tree (BST)
-Definition	Hierarchical structure with 2 child max	A special binary tree with sorted values
-Ordering Rule	No ordering rule	Left subtree < Node < Right subtree
-Duplicates	May or may not allow duplicates	Usually not allowed (depends on implementation)
-Use Cases	Hierarchies, expression trees, graphics	Fast lookup, insertion, and deletion
-Search Time (Average)	O(n)	O(log n) (if balanced)
-Examples	File system, expression parsing	Maps, sets, databases, in-memory search
-Common Operations
+Structure	Each node has at most two children	Each node has at most two children
+Value Ordering	No specific order	Left < Node < Right
+Searching Time	O(n) (linear search)	O(log n) average (if balanced)
+Purpose	General hierarchical data	Efficient searching and sorting
+Examples	Expression trees, file systems	Maps, dictionaries, indexes
+🔧 Basic Binary Tree Operations in C
 Create Node – Allocate and initialize a new node
 
-Insert Left/Right – Attach child nodes to a parent
+Insert Left/Right – Attach a node to a parent
 
-In-order Traversal – Visit left → node → right
+Tree Traversals:
 
-Pre-order / Post-order Traversals
+In-order (Left → Node → Right)
 
-Search (BST only) – Quickly find if a value exists
+Pre-order (Node → Left → Right)
 
-Delete Tree – Recursively free all nodes
+Post-order (Left → Right → Node)
 
-Sample Code
-binary_tree_t *root = create_node(10); root->left = create_node(5); root->right = create_node(20);
+Delete Tree – Free all nodes in memory
 
-inorder_traversal(root); // Output: 5 10 20 free_tree(root);
+🧪 Sample Code
+```
+binary_tree_t *root = create_node(10);
+root->left = create_node(5);
+root->right = create_node(15);
 
-Project Structure
-holbertonschool-binary_trees/ ├── binary_tree.h - Header file with type definitions ├── binary_tree.c - Tree operation implementations ├── main.c - Test and example usage └── README.md - Project documentation
+inorder_traversal(root);  // Output: 5 10 15
 
-How to Compile
-Use gcc to compile your source files:
+free_tree(root);
+```
 
-gcc -Wall -Werror -Wextra -pedantic *.c -o binary_tree ./binary_tree
+📁 Project Structure
+holbertonschool-binary_trees/
+├── binary_tree.h        // Header file
+├── binary_tree.c        // Implementation of tree functions
+├── main.c               // Test and usage
+└── README.md            // Project documentation
 
-Notes
-This project is written in C for educational purposes.
+▶️ How to Compile
+Use gcc to compile:
 
-For real-world applications, balanced BSTs like AVL Trees or Red-Black Trees are preferred.
+gcc -Wall -Wextra -Werror -pedantic *.c -o binary_tree
+./binary_tree
 
-Memory management is important—don’t forget to free your tree to avoid memory leaks.
+🧠 Learn More
+GeeksforGeeks: https://www.geeksforgeeks.org/binary-tree-data-structure/
 
-Recommended Learning
-GeeksforGeeks - Binary Trees: https://www.geeksforgeeks.org/binary-tree-data-structure/
+Visualgo (interactive animations): https://visualgo.net/en/bst
 
-Visualgo - BST Visualization: https://visualgo.net/en/bst
+CS50 & MIT OpenCourseWare (Data Structures)
 
-Data structures courses (CS50, MIT OpenCourseWare, etc.)
-
-Authors
-Arnaud TILAWAT - Clément GIBOTS - Holberton School Project
+✍️ Authors
+Arnaud TILAWAT - Clément GIBOT – Holberton School
