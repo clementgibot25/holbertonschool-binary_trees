@@ -27,7 +27,8 @@ A pointer to the left child
 
 A pointer to the right child
 
-🧭 What is a Binary Search Tree (BST)?
+#### 🧭 What is a Binary Search Tree (BST)?
+
 A Binary Search Tree (BST) is a special type of binary tree where:
 
 All nodes in the left subtree contain values less than the parent node.
@@ -38,7 +39,8 @@ This rule applies recursively to every node in the tree.
 
 This structure makes searching, inserting, and deleting elements efficient — ideally O(log n) time for balanced trees.
 
-⚖️ Differences: Binary Tree vs Binary Search Tree
+##### ⚖️ Differences: Binary Tree vs Binary Search Tree
+
 Feature	Binary Tree	Binary Search Tree (BST)
 Structure	Each node has at most two children	Each node has at most two children
 Value Ordering	No specific order	Left < Node < Right
@@ -60,7 +62,8 @@ Post-order (Left → Right → Node)
 
 Delete Tree – Free all nodes in memory
 
-🧪 Sample Code
+###### 🧪 Sample Code
+
 ```
 binary_tree_t *root = create_node(10);
 root->left = create_node(5);
@@ -71,25 +74,29 @@ inorder_traversal(root);  // Output: 5 10 15
 free_tree(root);
 ```
 
-📁 Project Structure
+###### 📁 Project Structure
+
 holbertonschool-binary_trees/
 ├── binary_tree.h        // Header file
 ├── binary_tree.c        // Implementation of tree functions
 ├── main.c               // Test and usage
 └── README.md            // Project documentation
 
-▶️ How to Compile
+###### ▶️ How to Compile
+
 Use gcc to compile:
 
 gcc -Wall -Wextra -Werror -pedantic *.c -o binary_tree
 ./binary_tree
 
-🧠 Learn More
+###### 🧠 Learn More
+
 GeeksforGeeks: https://www.geeksforgeeks.org/binary-tree-data-structure/
 
 Visualgo (interactive animations): https://visualgo.net/en/bst
 
 CS50 & MIT OpenCourseWare (Data Structures)
 
-✍️ Authors
+###### ✍️ Authors
+
 Arnaud TILAWAT - Clément GIBOT – Holberton School
